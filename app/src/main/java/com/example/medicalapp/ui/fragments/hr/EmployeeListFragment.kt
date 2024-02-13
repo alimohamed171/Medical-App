@@ -8,6 +8,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.medicalapp.R
 import com.example.medicalapp.adapters.CategoryAdapter
 import com.example.medicalapp.databinding.FragmentEmployeeListBinding
+import com.example.medicalapp.util.showToast
 
 class EmployeeListFragment : Fragment(R.layout.fragment_employee_list) {
 
@@ -24,6 +25,12 @@ class EmployeeListFragment : Fragment(R.layout.fragment_employee_list) {
         val adapter = CategoryAdapter()
         adapter.list = dataList
         recyclerView.adapter = adapter
+        adapter.onTapClick = object :CategoryAdapter.OnTapClick{
+            override fun onClick(type: String) {
+              showToast(type)
+            }
+
+        }
 
     }
 

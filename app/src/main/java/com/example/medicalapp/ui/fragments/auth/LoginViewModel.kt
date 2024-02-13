@@ -1,18 +1,16 @@
 package com.example.medicalapp.ui.fragments.auth
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.medicalapp.data.Data
-import com.example.medicalapp.data.ModelUser
+import com.example.medicalapp.data.UserData
 import com.example.medicalapp.repository.Repository
 import com.example.medicalapp.util.Resource
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.launch
 
 class LoginViewModel:ViewModel() {
-    private val _mutableLiveData = MutableLiveData<Resource<Data>>()
+    private val _mutableLiveData = MutableLiveData<Resource<UserData>>()
     val mutableLiveData get() = _mutableLiveData
     val repository = Repository()
 

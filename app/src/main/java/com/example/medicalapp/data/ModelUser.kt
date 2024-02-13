@@ -1,12 +1,11 @@
 package com.example.medicalapp.data
 
 data class ModelUser(
-    val `data`: Data,
+    val `data`: UserData,
     val message: String,
     val status: Int
 )
-
-data class Data(
+data class UserData(
     val access_token: String,
     val address: String,
     val birthday: String,
