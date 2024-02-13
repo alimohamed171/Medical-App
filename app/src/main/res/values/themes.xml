@@ -1,0 +1,37 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.MedicalAPP" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+         <item name="colorPrimary">@color/mainly_green</item>
+         <item name="colorPrimaryVariant">@color/mainly_green</item>
+    </style>
+
+    <style name="Theme.MedicalAPP" parent="Base.Theme.MedicalAPP" />
+
+    <style name="CircularShapeOverlay">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="CustomDatePickerDialog" parent="ThemeOverlay.MaterialComponents.Dialog">
+        <!-- Customize background color -->
+        <item name="colorPrimary">@color/font_color</item>
+        <!-- Customize text color -->
+<!--        <item name="android:textColorPrimary">#000000</item>-->
+<!--        &lt;!&ndash; Customize button color &ndash;&gt;-->
+<!--        <item name="android:colorAccent">#FF0000</item>-->
+        <!-- Add more customizations as needed -->
+    </style>
+    <style name="inputLayoutStyle">
+        <item name="boxCornerRadiusBottomEnd">@dimen/_6sdp</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/_6sdp</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/_6sdp</item>
+        <item name="boxCornerRadiusTopStart">@dimen/_6sdp</item>
+        <item name="boxStrokeColor">@color/font_color</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="android:textColorHint">@color/color_hint</item>
+        <item name="startIconTint">@color/font_color</item>
+        <item name="hintEnabled">false</item>
+        <item name="boxStrokeWidthFocused">1.5dp</item>
+    </style>
+</resources>

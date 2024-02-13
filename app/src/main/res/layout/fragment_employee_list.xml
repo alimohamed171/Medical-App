@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.fragments.hr.EmployeeListFragment">
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_12sdp"
+        android:text="Employee"
+        android:textSize="@dimen/_18sdp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/btnBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnBack" />
+
+    <ImageView
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_16sdp"
+
+        android:src="@drawable/btn_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText4"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_margin="@dimen/_16sdp"
+
+        android:background="@drawable/search_background"
+        android:drawableStart="@drawable/search_icon"
+        android:drawablePadding="@dimen/_8sdp"
+        android:paddingStart="@dimen/_8sdp"
+        android:hint="Search for Employee"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_category"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:layout_marginBottom="@dimen/_6sdp"
+        android:layout_marginEnd="@dimen/_16sdp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="horizontal"
+        tools:listitem="@layout/item_tab"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText4" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lottie"
+        app:lottie_rawRes="@raw/search_not_found"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        android:layout_gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rv_category"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:layout_marginBottom="@dimen/_6sdp"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:padding="@dimen/_3sdp"
+
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="vertical"
+        tools:listitem="@layout/item_employee"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rv_category" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/btnNewEmployee"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:layout_marginBottom="@dimen/_24sdp"
+
+        app:icon="@drawable/baseline_add"
+        app:iconTint="@color/white"
+        app:iconSize="@dimen/_24sdp"
+        app:cornerRadius="@dimen/_50sdp"
+
+        android:backgroundTint="@color/font_color"
+        app:shapeAppearanceOverlay="@style/CircularShapeOverlay"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
