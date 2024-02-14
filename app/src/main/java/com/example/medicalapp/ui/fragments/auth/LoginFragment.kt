@@ -38,15 +38,9 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
             val password = binding.edtPassword.text.toString().trim()
             if(validateLogin(email, password)){
                 viewModel.login(email , password, "ssss")
-
             }
-
-            observe()
-
-
-
         }
-
+        observe()
 
     }
 
