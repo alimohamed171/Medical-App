@@ -71,6 +71,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtFName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/person"
@@ -92,6 +93,7 @@
                 app:layout_constraintStart_toStartOf="@+id/edtFirstName"
                 app:layout_constraintTop_toBottomOf="@+id/edtFirstName">
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtLName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/person"
@@ -230,6 +232,7 @@
                 app:layout_constraintStart_toStartOf="@+id/edtFirstName"
                 app:layout_constraintTop_toBottomOf="@+id/spinnerStatus">
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editPhone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/phone"
@@ -251,6 +254,7 @@
                 app:layout_constraintStart_toStartOf="@+id/edtFirstName"
                 app:layout_constraintTop_toBottomOf="@+id/edtPhone">
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtEmailAddress"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/emil"
@@ -262,7 +266,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/edtAddress"
+                android:id="@+id/edtAddres"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_20sdp"
@@ -272,6 +276,7 @@
                 app:layout_constraintStart_toStartOf="@+id/edtFirstName"
                 app:layout_constraintTop_toBottomOf="@+id/edtEmail">
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtAddress"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/adress"
@@ -292,9 +297,10 @@
                 app:endIconTint="@color/font_color"
                 app:layout_constraintEnd_toEndOf="@id/edtFirstName"
                 app:layout_constraintStart_toStartOf="@id/edtFirstName"
-                app:layout_constraintTop_toBottomOf="@id/edtAddress">
+                app:layout_constraintTop_toBottomOf="@id/edtAddres">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/lock"
@@ -404,8 +410,8 @@
                 android:background="@color/font_color"
                 android:layout_marginTop="4dp"
                 app:layout_constraintEnd_toStartOf="@id/gd3"
-                app:layout_constraintTop_toTopOf="@id/edtAddress"
-                app:layout_constraintBottom_toBottomOf="@id/edtAddress"/>
+                app:layout_constraintTop_toTopOf="@id/edtAddres"
+                app:layout_constraintBottom_toBottomOf="@id/edtAddres"/>
             <View
                 android:id="@+id/view6"
                 android:layout_width="2dp"

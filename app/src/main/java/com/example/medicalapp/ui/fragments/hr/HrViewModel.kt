@@ -15,7 +15,7 @@ class HrViewModel:ViewModel() {
 
     private val _mutableUsersLiveData = MutableLiveData<Resource<List<UsersData>?>>()
     private val _mutableRegisterLiveData = MutableLiveData<Resource<UserData>>()
-    val mutableRegisterLiveData get() = _mutableUsersLiveData
+    val mutableRegisterLiveData get() = _mutableRegisterLiveData
     val mutableUsersLiveData get() = _mutableUsersLiveData
     private val repository = Repository()
 

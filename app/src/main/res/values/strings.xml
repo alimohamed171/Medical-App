@@ -21,4 +21,10 @@
     <string name="date_of_birth">Date of birth</string>
     <string name="edit_profile">Edit Profile</string>
     <string name="email">E-mail</string>
+    <string name="required">Required</string>
+    <string name="please_select_gender">please select gender</string>
+    <string name="specialist_hint">please select specialist</string>
+    <string name="birthday_hint">please select birthday</string>
+    <string name="status_hint">please select status</string>
+    <string name="wrong_email_address">wrong email address format</string>
 </resources>
