@@ -68,6 +68,7 @@
         app:lottie_rawRes="@raw/search_not_found"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
+
         android:layout_gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -75,9 +76,9 @@
         app:layout_constraintTop_toBottomOf="@+id/rv_category"/>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvEmployee"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-
         android:layout_marginStart="@dimen/_16sdp"
         android:layout_marginTop="@dimen/_6sdp"
         android:layout_marginBottom="@dimen/_6sdp"

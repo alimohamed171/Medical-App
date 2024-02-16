@@ -7,6 +7,7 @@ import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface IApiCalls {
 
@@ -18,9 +19,9 @@ interface IApiCalls {
        @Field("device_token") deviceToken:String
     ):ModelUser
 
-    @GET("doctors/{type}")
+    @GET("doctors")
     suspend fun getAllUsers(
-        @Path("type")
+        @Query("type")
         type :String
     ): ModelAllUsers
 

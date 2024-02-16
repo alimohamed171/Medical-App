@@ -19,12 +19,12 @@ class LoginViewModel:ViewModel() {
             try {
                 val response = repository.login(email, password, deviceToken)
                 if (response.status == 1){
-                    mutableLiveData.postValue(Resource.Success(response.data))
+                    _mutableLiveData.postValue(Resource.Success(response.data))
                 }else{
-                    mutableLiveData.postValue(Resource.Error(response.message))
+                    _mutableLiveData.postValue(Resource.Error(response.message))
                 }
             }catch (e: Exception){
-                mutableLiveData.postValue(Resource.Error("An error occurred: ${e.message}"))
+                _mutableLiveData.postValue(Resource.Error("An error occurred: ${e.message}"))
             }
         }
     }
