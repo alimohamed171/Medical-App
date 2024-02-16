@@ -13,8 +13,10 @@ import java.lang.Exception
 
 class HrViewModel:ViewModel() {
 
-    private val _mutableLiveData = MutableLiveData<Resource<List<UsersData>?>>()
-    val mutableLiveData get() = _mutableLiveData
+    private val _mutableUsersLiveData = MutableLiveData<Resource<List<UsersData>?>>()
+    private val _mutableRegisterLiveData = MutableLiveData<Resource<UserData>>()
+    val mutableRegisterLiveData get() = _mutableUsersLiveData
+    val mutableUsersLiveData get() = _mutableUsersLiveData
     private val repository = Repository()
 
 
@@ -23,16 +25,34 @@ class HrViewModel:ViewModel() {
             try {
                 val response = repository.getAllUsers(type)
                 if (response.status == 1){
-                    _mutableLiveData.postValue(Resource.Success(response.data))
+                    _mutableUsersLiveData.postValue(Resource.Success(response.data))
                 }else{
-                    _mutableLiveData.postValue(Resource.Error(response.message))
+                    _mutableUsersLiveData.postValue(Resource.Error(response.message))
                 }
             }catch (e: Exception){
-                _mutableLiveData.postValue(Resource.Error("An error occurred: ${e.message}"))
+                _mutableUsersLiveData.postValue(Resource.Error("An error occurred: ${e.message}"))
             }
         }
     }
 
+    fun registerUser(email: String, password: String, fName: String, lName: String,
+                     gender: String, specialist: String, birthday: String, status: String,
+                     address: String, mobile: String, type: String){
+        try {
+            viewModelScope.launch (IO) {
+                val response =  repository.registerUser(email, password, fName, lName, gender,
+                    specialist, birthday, status, address, mobile, type)
+                if (response.status == 1){
+                    _mutableRegisterLiveData.postValue(Resource.Success(response.data))
+                }else{
+                    _mutableRegisterLiveData.postValue(Resource.Error(response.message))
+                }
+            }
+        }catch(e: Exception){
+            _mutableRegisterLiveData.postValue(Resource.Error("An error occurred: ${e.message}"))
+        }
 
+
+    }
 
 }

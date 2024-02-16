@@ -37,7 +37,7 @@ class EmployeeListFragment : Fragment(R.layout.fragment_employee_list) {
 
     private fun observe() {
         viewModel.getUsers(ALL)
-        viewModel.mutableLiveData.observe(viewLifecycleOwner){ response ->
+        viewModel.mutableUsersLiveData.observe(viewLifecycleOwner){ response ->
             when(response){
                 is Resource.Success -> {
                     response.data?.let { data ->
