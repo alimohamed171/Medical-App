@@ -10,6 +10,7 @@ import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.medicalapp.R
 import com.example.medicalapp.util.HR
+import com.example.medicalapp.util.RECEPTIONIST
 import com.example.medicalapp.util.SharedPrefs
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -32,6 +33,8 @@ class SplashFragment : Fragment() {
             delay(1000)
             if(SharedPrefs.getUserType() == HR) {
                findNavController().navigate(R.id.action_splashFragment_to_hrHomeFragment)
+            }else if(SharedPrefs.getUserType() == RECEPTIONIST){
+                findNavController().navigate(R.id.action_splashFragment_to_specialistHomeFragment)
             }
             else {
              findNavController()

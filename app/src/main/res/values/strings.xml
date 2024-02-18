@@ -27,4 +27,13 @@
     <string name="birthday_hint">please select birthday</string>
     <string name="status_hint">please select status</string>
     <string name="wrong_email_address">wrong email address format</string>
+    <string name="select_date">select date</string>
+    <string name="patient_name">Patient Name</string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last name</string>
+    <string name="address">Address</string>
+    <string name="age">age</string>
+    <string name="select_doctor">Select Doctor</string>
+    <string name="send_call">Send Call</string>
+    <string name="create_user">Create User</string>
 </resources>

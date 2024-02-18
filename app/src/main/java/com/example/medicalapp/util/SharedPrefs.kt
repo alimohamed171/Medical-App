@@ -30,7 +30,7 @@ object SharedPrefs {
     fun getUserType(): String? {
         return sharedPreferences.getString("USER_TYPE", "" )
     }
- fun setUserName(id : String){
+    fun setUserName(id : String){
         with(sharedPreferences.edit() ){
             putString("USER_NAME", id)
             commit()
@@ -38,6 +38,16 @@ object SharedPrefs {
     }
     fun getUserName(): String? {
         return sharedPreferences.getString("USER_NAME", "" )
+    }
+
+    fun setId(id : Int){
+        with(sharedPreferences.edit() ){
+            putInt("ID", id)
+            commit()
+        }
+    }
+    fun getId(): Int {
+        return sharedPreferences.getInt("ID", 0 )
     }
 
 

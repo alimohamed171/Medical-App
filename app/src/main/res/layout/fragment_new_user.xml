@@ -11,8 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/_12sdp"
         android:text="New User"
-        android:textSize="@dimen/_18sdp"
-        android:textStyle="bold"
+        android:textSize="@dimen/_14sdp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,9 +63,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_20sdp"
 
-
                 style="@style/inputLayoutStyle"
-
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -76,11 +73,14 @@
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/person"
                     android:drawablePadding="15dp"
-                    android:hint="First name"
+                    android:hint="@string/first_name"
+                    android:textColorHint="@color/gray"
+
                     android:inputType="text"
                     android:maxLines="1"
                     android:textSize="18sp" />
             </com.google.android.material.textfield.TextInputLayout>
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/edtLastName"
                 android:layout_width="0dp"
@@ -98,7 +98,9 @@
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/person"
                     android:drawablePadding="15dp"
-                    android:hint="Last name"
+                    android:hint="@string/last_name"
+                    android:textColorHint="@color/gray"
+
                     android:inputType="text"
                     android:maxLines="1"
                     android:textSize="18sp" />
@@ -177,6 +179,7 @@
                 android:background="@drawable/spinner_background"
                 android:drawablePadding="@dimen/_5sdp"
                 android:text="@string/date_of_birth"
+                android:textColor="@color/gray"
 
                 android:gravity="center_vertical"
                 android:maxLines="1"
@@ -238,6 +241,8 @@
                     android:drawableStart="@drawable/phone"
                     android:drawablePadding="15dp"
                     android:inputType="phone"
+                    android:textColorHint="@color/gray"
+
                     android:hint="@string/phone"
                     android:maxLength="11"
                     android:textSize="18sp" />
@@ -260,6 +265,8 @@
                     android:drawableStart="@drawable/emil"
                     android:drawablePadding="15dp"
                     android:inputType="textEmailAddress"
+                    android:textColorHint="@color/gray"
+
                     android:hint="@string/email"
                     android:maxLines="1"
                     android:textSize="18sp" />
@@ -282,7 +289,9 @@
                     android:drawableStart="@drawable/adress"
                     android:drawablePadding="15dp"
                     android:inputType="text"
-                    android:hint="Address"
+                    android:textColorHint="@color/gray"
+
+                    android:hint="@string/address"
                     android:maxLines="1"
                     android:textSize="18sp" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -306,6 +315,8 @@
                     android:drawableStart="@drawable/lock"
                     android:drawablePadding="15dp"
                     android:inputType="textPassword"
+                    android:textColorHint="@color/gray"
+
                     android:hint="@string/password"
                     android:maxLines="1"
                     android:textSize="18sp" />
@@ -319,7 +330,7 @@
                 android:paddingVertical="@dimen/_10sdp"
                 app:backgroundTint="#06CAB8"
                 app:cornerRadius="@dimen/_6sdp"
-                android:text="Create User"
+                android:text="@string/create_user"
                 app:layout_constraintEnd_toEndOf="@id/edtPassword"
                 app:layout_constraintStart_toStartOf="@+id/edtPassword"
                 app:layout_constraintTop_toBottomOf="@id/edtPassword" />

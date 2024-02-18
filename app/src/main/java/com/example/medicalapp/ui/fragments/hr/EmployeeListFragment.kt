@@ -62,7 +62,7 @@ class EmployeeListFragment : Fragment(R.layout.fragment_employee_list) {
         employeeListAdapter.list = usersData
         employeeListAdapter.setOnItemClickListener {
             showToast("${it.id} + ${it.first_name}")
-            findNavController().navigate(R.id.action_employeeListFragment_to_profileFragment)
+            findNavController().navigate(EmployeeListFragmentDirections.actionEmployeeListFragmentToProfileFragment(it.id))
         }
 
         rv.adapter = employeeListAdapter

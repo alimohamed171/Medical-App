@@ -38,7 +38,7 @@ class HrHomeFragment : Fragment(R.layout.fragment_hr_home) {
         }
         binding.imgUser.setOnClickListener{
             findNavController()
-                .navigate(R.id.action_hrHomeFragment_to_profileFragment)
+                .navigate(HrHomeFragmentDirections.actionHrHomeFragmentToProfileFragment(SharedPrefs.getId()))
         }
     }
 

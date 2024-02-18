@@ -16,6 +16,7 @@ import com.example.medicalapp.data.ModelUser
 import com.example.medicalapp.databinding.FragmentLoginBinding
 import com.example.medicalapp.repository.Repository
 import com.example.medicalapp.util.HR
+import com.example.medicalapp.util.RECEPTIONIST
 import com.example.medicalapp.util.REQUIRED
 import com.example.medicalapp.util.Resource
 import com.example.medicalapp.util.SharedPrefs
@@ -56,6 +57,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                         SharedPrefs.setUserToken(userData.access_token)
                         SharedPrefs.setUserType(userData.type)
                         SharedPrefs.setUserName(userData.first_name+" "+userData.last_name)
+                        SharedPrefs.setId(userData.id)
                         navigate(userData.type)
                     }
                 }
@@ -72,9 +74,11 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
 
 
     private fun navigate( type: String){
-        if (type == HR){
-            findNavController().navigate(R.id.action_loginFragment_to_hrHomeFragment)
+        when (type) {
+            HR -> findNavController().navigate(R.id.action_loginFragment_to_hrHomeFragment)
+            RECEPTIONIST -> findNavController().navigate(R.id.action_loginFragment_to_specialistHomeFragment)
         }
+
     }
 
     private fun validateLogin(email: String, password: String): Boolean {

@@ -25,10 +25,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
     }
 
     private fun navigation() {
-        binding.ivCircleEdit.setOnClickListener{
-            findNavController().navigate(R.id.action_profileFragment_to_editProfileFragment)
-        }
-        binding.btnBack.setOnClickListener {
+              binding.btnBack.setOnClickListener {
             findNavController().navigateUp()
         }
     }

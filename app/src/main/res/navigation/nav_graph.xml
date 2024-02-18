@@ -18,6 +18,9 @@
         <action
             android:id="@+id/action_splashFragment_to_hrHomeFragment"
             app:destination="@id/hrHomeFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_specialistHomeFragment"
+            app:destination="@id/specialistHomeFragment" />
     </fragment>
     <fragment
         android:id="@+id/employeeListFragment"
@@ -41,6 +44,9 @@
             app:destination="@id/hrHomeFragment"
             app:popUpTo="@id/nav_graph"
             app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_loginFragment_to_specialistHomeFragment"
+            app:destination="@id/specialistHomeFragment" />
     </fragment>
     <fragment
         android:id="@+id/newUserFragment"
@@ -68,16 +74,43 @@
         android:name="com.example.medicalapp.ui.fragments.common.ProfileFragment"
         android:label="ProfileFragment"
         tools:layout="@layout/fragment_profile">
-        <action
-            android:id="@+id/action_profileFragment_to_editProfileFragment"
-            app:destination="@id/editProfileFragment" />
         <argument
             android:name="id"
             app:argType="integer" />
     </fragment>
     <fragment
-        android:id="@+id/editProfileFragment"
-        android:name="com.example.medicalapp.ui.fragments.common.EditProfileFragment"
-        android:label="fragment_edit_profile"
-        tools:layout="@layout/fragment_edit_profile" />
+        android:id="@+id/specialistHomeFragment"
+        android:name="com.example.medicalapp.ui.fragments.specialist.SpecialistHomeFragment"
+        android:label="SpecialistHomeFragment"
+        tools:layout="@layout/fragment_specialist_home">
+        <action
+            android:id="@+id/action_specialistHomeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_specialistHomeFragment_to_specialistCallsFragment"
+            app:destination="@id/specialistCallsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/specialistCallsFragment"
+        android:name="com.example.medicalapp.ui.fragments.specialist.SpecialistCallsFragment"
+        android:label="SpecialistCallsFragment"
+        tools:layout="@layout/fragment_specialist_calls">
+        <action
+            android:id="@+id/action_specialistCallsFragment_to_createCallFragment"
+            app:destination="@id/createCallFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createCallFragment"
+        android:name="com.example.medicalapp.ui.fragments.specialist.CreateCallFragment"
+        android:label="fragment_create_call"
+        tools:layout="@layout/fragment_create_call" >
+        <action
+            android:id="@+id/action_createCallFragment_to_selectEmployeeFragment"
+            app:destination="@id/selectEmployeeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectEmployeeFragment"
+        android:name="com.example.medicalapp.ui.fragments.common.SelectEmployeeFragment"
+        android:label="SelectEmployeeFragment"
+        tools:layout="@layout/fragment_select_employee"/>
 </navigation>
