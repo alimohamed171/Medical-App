@@ -17,6 +17,7 @@ import com.example.medicalapp.databinding.FragmentNewUserBinding
 import com.example.medicalapp.util.ANALYSIS
 import com.example.medicalapp.util.Resource
 import com.example.medicalapp.util.showToast
+import com.google.android.material.datepicker.MaterialDatePicker
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
@@ -70,6 +71,7 @@ private fun observe() {
 }
 
     private fun showDatePicker() {
+       // val ddd = MaterialDatePicker
         val datePickerDialog = DatePickerDialog(
             requireContext(),
             //    android.R.style.Theme_DeviceDefault_Dialog_Alert ,
@@ -108,7 +110,7 @@ private fun observe() {
             val  address = edtAddress.text.toString()
             val  phone = editPhone.text.toString()
             val  gender = spinnerGender.selectedItem.toString()
-            var  type = spinnerSpecialist.selectedItem.toString()
+            val type = spinnerSpecialist.selectedItem.toString()
             val  status = spinnerStatus.selectedItem.toString()
 
             if (fName ==""){

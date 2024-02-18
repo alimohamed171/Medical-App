@@ -46,7 +46,7 @@ class EmployeeListAdapter : RecyclerView.Adapter<EmployeeListAdapter.Holder>() {
         fun bind(user : UsersData?){
             textName.text = user?.first_name
             textDetails.text = user?.type
-            Glide.with(itemView).load(user?.avatar).into(imageUser)
+          //  Glide.with(itemView).load(user?.avatar).into(imageUser)
             itemView.setOnClickListener {
                 onItemClickListener?.let {
                     if (user != null) {

@@ -18,4 +18,5 @@ class Repository {
     suspend fun getAllUsers(type : String)
     = RetrofitInstance.api.getAllUsers(type)
 
+    suspend fun showProfile(id: Int)= RetrofitInstance.api.showProfile(id)
 }

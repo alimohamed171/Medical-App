@@ -32,6 +32,11 @@ interface IApiCalls {
         @Field("mobile") mobile: String,
         @Field("type") type: String
     ):ModelUser
+    @FormUrlEncoded
+    @POST("show-profile")
+    suspend fun showProfile(
+        @Field("user_id") id :Int
+    ):ModelUser
     @GET("doctors")
     suspend fun getAllUsers(
         @Query("type")
