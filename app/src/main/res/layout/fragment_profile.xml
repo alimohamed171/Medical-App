@@ -56,7 +56,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:text="Aly Mohamed Mahmoud" />
+                tools:text="Aly Mohamed Mahmoud" />
 
             <ImageView
                 android:id="@+id/image_type"
@@ -78,7 +78,7 @@
                 app:layout_constraintBottom_toBottomOf="@id/image_type"
                 app:layout_constraintStart_toEndOf="@id/image_type"
                 app:layout_constraintTop_toTopOf="@+id/image_type"
-                android:text="HR"/>
+                tools:text="HR"/>
 
             <ImageView
                 android:id="@+id/image_gender"
@@ -100,7 +100,7 @@
                 app:layout_constraintBottom_toBottomOf="@id/image_gender"
                 app:layout_constraintStart_toEndOf="@id/image_gender"
                 app:layout_constraintTop_toTopOf="@+id/image_gender"
-                android:text="male" />
+                tools:text="male" />
 
             <ImageView
                 android:id="@+id/image_birthday"
@@ -122,7 +122,7 @@
                 app:layout_constraintBottom_toBottomOf="@id/image_birthday"
                 app:layout_constraintStart_toEndOf="@id/image_birthday"
                 app:layout_constraintTop_toTopOf="@+id/image_birthday"
-                android:text="17-01-2004" />
+                tools:text="17-01-2004" />
 
             <ImageView
                 android:id="@+id/image_address"
@@ -144,7 +144,7 @@
                 app:layout_constraintBottom_toBottomOf="@id/image_address"
                 app:layout_constraintStart_toEndOf="@id/image_address"
                 app:layout_constraintTop_toTopOf="@+id/image_address"
-                android:text="Giza - imbaba" />
+                tools:text="Giza - imbaba" />
 
             <ImageView
                 android:id="@+id/image_status"
@@ -166,7 +166,7 @@
                 app:layout_constraintBottom_toBottomOf="@id/image_status"
                 app:layout_constraintStart_toEndOf="@id/image_status"
                 app:layout_constraintTop_toTopOf="@+id/image_status"
-                android:text="@string/single" />
+                tools:text="@string/single" />
 
             <ImageView
                 android:id="@+id/image_email"
@@ -188,7 +188,7 @@
                 app:layout_constraintBottom_toBottomOf="@id/image_email"
                 app:layout_constraintStart_toEndOf="@id/image_email"
                 app:layout_constraintTop_toTopOf="@+id/image_email"
-                android:text="alimohammed1712003@gmail.com" />
+                tools:text="alimohammed1712003@gmail.com" />
 
             <ImageView
                 android:id="@+id/image_phone"
@@ -210,7 +210,7 @@
                 app:layout_constraintBottom_toBottomOf="@id/image_phone"
                 app:layout_constraintStart_toEndOf="@id/image_phone"
                 app:layout_constraintTop_toTopOf="@+id/image_phone"
-                android:text="01287272445" />
+                tools:text="01287272445" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

@@ -71,7 +71,7 @@
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.medicalapp.ui.fragments.common.ProfileFragment"
+        android:name="com.example.medicalapp.ui.fragments.common.profile.ProfileFragment"
         android:label="ProfileFragment"
         tools:layout="@layout/fragment_profile">
         <argument
