@@ -20,7 +20,6 @@ class SelectEmployeeFragment : Fragment(R.layout.fragment_select_employee) {
 
     private var _binding :FragmentSelectEmployeeBinding ?=null
     private val binding get() = _binding!!
-    private val args: SelectEmployeeFragmentArgs by navArgs()
     lateinit var employeeType :String
     private val adapterRecyclerSelectEmployee:
             AdapterRecyclerSelectEmployee by lazy { AdapterRecyclerSelectEmployee() }

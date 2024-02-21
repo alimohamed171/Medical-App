@@ -21,6 +21,6 @@ class Repository {
 
     suspend fun showProfile(id: Int)= RetrofitInstance.api.showProfile(id)
 
-    suspend fun createCall(patientName: String,doctorId: Int,age: Int,phone :String,description:String)
+    suspend fun createCall(patientName: String,doctorId: Int,age: String,phone :String,description:String)
     = RetrofitInstance.api.createCall(patientName, doctorId, age, phone, description)
 }

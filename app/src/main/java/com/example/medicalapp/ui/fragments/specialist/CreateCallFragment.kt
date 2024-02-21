@@ -16,22 +16,18 @@ class CreateCallFragment : Fragment(R.layout.fragment_create_call) {
     var _binding :FragmentCreateCallBinding? = null
     val binding get() = _binding!!
     val viewModel:SpecialistViewModel by viewModels()
+    var docId = -1
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentCreateCallBinding.bind(view)
 
         binding.btnCreateUser.setOnClickListener {
-            createCall()
+           validation()
         }
 
-        setFragmentResultListener("employeeName") { _, bundle ->
-            val result = bundle.getString("dataName")
-            showToast(result)
-        }
-        setFragmentResultListener("employeeId") { _, bundle ->
-            val result = bundle.getInt("dataId")
-            showToast(result)
-        }
+        getDataOfDoc()
+
+
 
         binding.txtSelectDoc.setOnClickListener {
             findNavController().navigate(CreateCallFragmentDirections.actionCreateCallFragmentToSelectEmployeeFragment("Doctor"))
@@ -40,7 +36,15 @@ class CreateCallFragment : Fragment(R.layout.fragment_create_call) {
     }
 
 
-
+    fun getDataOfDoc(){
+        setFragmentResultListener("employeeName") { _, bundle ->
+            val result = bundle.getString("dataName")
+           binding.txtSelectDoc.text = result
+        }
+        setFragmentResultListener("employeeId") { _, bundle ->
+            docId = bundle.getInt("dataId")
+        }
+    }
 
     private fun observe() {
         viewModel.mutableCreateCallLiveData.observe(viewLifecycleOwner){ response ->
@@ -56,11 +60,40 @@ class CreateCallFragment : Fragment(R.layout.fragment_create_call) {
         findNavController().navigateUp()
     }
 
-    private fun createCall() {
-        viewModel.createCall("teest" , age = 18 , phone = "012872" ,
-            doctorId = 5, description = "jdfnsdnfsdnfsdnflksdnjukbsskdkfkdkfsdkfsd")
+
+
+    private fun validation() {
+        val patientName = binding.edtPatientName.text.toString()
+        val patientAge = binding.edtAge.text.toString()
+        val patientPhone = binding.edtPhone.text.toString()
+        val patientDescription = binding.edtCaseDescription.text.toString()
+
+        if (patientName.isEmpty()) {
+            binding.edtPatientName.error = getString(R.string.required)
+        } else if (patientAge.isEmpty()) {
+            binding.edtAge.error = getString(R.string.required)
+        } else if (patientPhone.isEmpty()) {
+            binding.edtPhone.error = getString(R.string.required)
+        } else if (docId == -1) {
+            showToast("Select Doctor First")
+        } else if (patientDescription.isEmpty()) {
+            binding.edtCaseDescription.error = getString(R.string.required)
+        } else {
+           createCall(
+                patientName,
+                patientAge,
+                docId,
+                patientPhone,
+                patientDescription
+            )
+        }
+
     }
 
+    private fun createCall(patientName: String, patientAge: String, docId: Int, patientPhone: String, patientDescription: String) {
+        viewModel.createCall(patientName , age = patientAge , phone = patientPhone ,
+            doctorId = docId, description = patientDescription)
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()

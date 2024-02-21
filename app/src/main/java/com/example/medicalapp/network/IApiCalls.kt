@@ -50,7 +50,7 @@ interface IApiCalls {
     suspend fun createCall(
         @Field("patient_name") patientName: String,
         @Field("doctor_id") doctorId: Int,
-        @Field("age") age: Int,
+        @Field("age") age: String,
         @Field("phone") phone :String,
         @Field("description") description:String
     ):ModelResponseCreation

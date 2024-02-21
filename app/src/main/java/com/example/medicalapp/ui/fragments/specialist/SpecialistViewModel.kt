@@ -16,7 +16,7 @@ class SpecialistViewModel:ViewModel() {
     val mutableCreateCallLiveData get() = _mutableCreateCallLiveData
 
 
-    fun createCall(patientName: String,doctorId: Int,age: Int,phone :String,description:String){
+    fun createCall(patientName: String,doctorId: Int,age: String,phone :String,description:String){
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 val response = repository.createCall(patientName, doctorId, age, phone, description)
