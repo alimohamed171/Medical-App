@@ -1,6 +1,7 @@
 package com.example.medicalapp.repository
 
 import com.example.medicalapp.network.RetrofitInstance
+import retrofit2.http.Field
 
 class Repository {
 
@@ -19,4 +20,7 @@ class Repository {
     = RetrofitInstance.api.getAllUsers(type)
 
     suspend fun showProfile(id: Int)= RetrofitInstance.api.showProfile(id)
+
+    suspend fun createCall(patientName: String,doctorId: Int,age: Int,phone :String,description:String)
+    = RetrofitInstance.api.createCall(patientName, doctorId, age, phone, description)
 }

@@ -116,7 +116,7 @@
         android:layout_marginTop="@dimen/_10sdp"
         android:background="@drawable/search_background"
         android:gravity="top"
-        android:hint="case_description"
+        android:hint="case description"
         android:textColorHint="@color/gray"
 
         android:padding="@dimen/_10ssp"

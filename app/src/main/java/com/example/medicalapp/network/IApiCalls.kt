@@ -1,6 +1,7 @@
 package com.example.medicalapp.network
 
 import com.example.medicalapp.data.ModelAllUsers
+import com.example.medicalapp.data.ModelResponseCreation
 import com.example.medicalapp.data.ModelUser
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
@@ -43,4 +44,14 @@ interface IApiCalls {
         type :String
     ): ModelAllUsers
 
+    // calls
+    @FormUrlEncoded
+    @POST("calls")
+    suspend fun createCall(
+        @Field("patient_name") patientName: String,
+        @Field("doctor_id") doctorId: Int,
+        @Field("age") age: Int,
+        @Field("phone") phone :String,
+        @Field("description") description:String
+    ):ModelResponseCreation
 }

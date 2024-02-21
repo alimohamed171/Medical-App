@@ -36,4 +36,5 @@
     <string name="select_doctor">Select Doctor</string>
     <string name="send_call">Send Call</string>
     <string name="create_user">Create User</string>
+
 </resources>
