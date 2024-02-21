@@ -112,5 +112,9 @@
         android:id="@+id/selectEmployeeFragment"
         android:name="com.example.medicalapp.ui.fragments.common.SelectEmployeeFragment"
         android:label="SelectEmployeeFragment"
-        tools:layout="@layout/fragment_select_employee"/>
+        tools:layout="@layout/fragment_select_employee">
+        <argument
+            android:name="employeeType"
+            app:argType="string" />
+    </fragment>
 </navigation>

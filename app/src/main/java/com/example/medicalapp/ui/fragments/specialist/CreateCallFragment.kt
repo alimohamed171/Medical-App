@@ -3,6 +3,7 @@ package com.example.medicalapp.ui.fragments.specialist
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
+import androidx.fragment.app.setFragmentResultListener
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.medicalapp.R
@@ -23,9 +24,23 @@ class CreateCallFragment : Fragment(R.layout.fragment_create_call) {
             createCall()
         }
 
+        setFragmentResultListener("employeeName") { _, bundle ->
+            val result = bundle.getString("dataName")
+            showToast(result)
+        }
+        setFragmentResultListener("employeeId") { _, bundle ->
+            val result = bundle.getInt("dataId")
+            showToast(result)
+        }
 
+        binding.txtSelectDoc.setOnClickListener {
+            findNavController().navigate(CreateCallFragmentDirections.actionCreateCallFragmentToSelectEmployeeFragment("Doctor"))
+        }
         observe()
     }
+
+
+
 
     private fun observe() {
         viewModel.mutableCreateCallLiveData.observe(viewLifecycleOwner){ response ->
