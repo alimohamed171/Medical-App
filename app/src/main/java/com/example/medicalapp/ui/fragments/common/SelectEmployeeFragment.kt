@@ -15,7 +15,9 @@ import com.example.medicalapp.ui.fragments.common.profile.ProfileFragmentArgs
 import com.example.medicalapp.ui.fragments.hr.HrViewModel
 import com.example.medicalapp.util.Resource
 import com.example.medicalapp.util.showToast
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SelectEmployeeFragment : Fragment(R.layout.fragment_select_employee) {
 
     private var _binding :FragmentSelectEmployeeBinding ?=null

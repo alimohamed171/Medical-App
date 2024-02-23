@@ -18,11 +18,12 @@ import com.example.medicalapp.util.ANALYSIS
 import com.example.medicalapp.util.Resource
 import com.example.medicalapp.util.showToast
 import com.google.android.material.datepicker.MaterialDatePicker
+import dagger.hilt.android.AndroidEntryPoint
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
 
-
+@AndroidEntryPoint
 class NewUserFragment : Fragment(R.layout.fragment_new_user) {
 
 

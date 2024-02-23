@@ -1,8 +1,12 @@
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
-    id("com.google.devtools.ksp")
-    id("androidx.navigation.safeargs.kotlin")
+//    id("com.android.application")
+//    id("org.jetbrains.kotlin.android")
+//    id("com.google.devtools.ksp")
+        id("com.android.application")
+        id("org.jetbrains.kotlin.android")
+        id("kotlin-kapt")
+        id ("dagger.hilt.android.plugin")
+        id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -38,6 +42,11 @@ android {
     buildFeatures{
         viewBinding = true
     }
+    kapt {
+        correctErrorTypes = true
+    }
+
+
 }
 
 dependencies {
@@ -56,9 +65,9 @@ dependencies {
     implementation("com.intuit.sdp:sdp-android:1.1.0")
     // Architectural Components
     implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
-    // Room
-    implementation ("androidx.room:room-runtime:2.6.0")
-    ksp ("androidx.room:room-compiler:2.6.0")
+//    // Room
+//    implementation ("androidx.room:room-runtime:2.6.0")
+//    ksp ("androidx.room:room-compiler:2.6.0")
     // Kotlin Extensions and Coroutines support for Room
     implementation ("androidx.room:room-ktx:2.6.0")
     // Coroutines
@@ -80,7 +89,11 @@ dependencies {
     implementation("de.hdodenhof:circleimageview:3.1.0")
     // animation
     implementation("com.airbnb.android:lottie:3.4.0")
+    //Dagger - Hilt
+    implementation ("com.google.dagger:hilt-android:2.48.1")
+    kapt ("com.google.dagger:hilt-android-compiler:2.48.1")
+    kapt ("androidx.hilt:hilt-compiler:1.1.0")
 
-    ksp ("com.github.bumptech.glide:compiler:4.12.0")
+   // ksp ("com.github.bumptech.glide:compiler:4.12.0")
 
 }

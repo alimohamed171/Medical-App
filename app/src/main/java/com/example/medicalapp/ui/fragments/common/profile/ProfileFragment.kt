@@ -15,8 +15,9 @@ import com.example.medicalapp.data.UserData
 import com.example.medicalapp.databinding.FragmentProfileBinding
 import com.example.medicalapp.util.Resource
 import com.example.medicalapp.util.showToast
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class ProfileFragment : Fragment(R.layout.fragment_profile) {
     private val args: ProfileFragmentArgs by navArgs()
     var user : UserData? = null

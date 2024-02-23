@@ -13,7 +13,9 @@ import com.example.medicalapp.databinding.FragmentEmployeeListBinding
 import com.example.medicalapp.util.ALL
 import com.example.medicalapp.util.Resource
 import com.example.medicalapp.util.showToast
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class EmployeeListFragment : Fragment(R.layout.fragment_employee_list) {
 
     var _binding : FragmentEmployeeListBinding? = null

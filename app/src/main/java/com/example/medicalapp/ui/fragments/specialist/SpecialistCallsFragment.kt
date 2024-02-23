@@ -8,10 +8,11 @@ import android.view.View
 import androidx.navigation.fragment.findNavController
 import com.example.medicalapp.R
 import com.example.medicalapp.databinding.FragmentSpecialistCallsBinding
+import dagger.hilt.android.AndroidEntryPoint
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
-
+@AndroidEntryPoint
 class SpecialistCallsFragment : Fragment(R.layout.fragment_specialist_calls) {
 
     var _binding : FragmentSpecialistCallsBinding? = null

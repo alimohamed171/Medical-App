@@ -36,7 +36,7 @@ class CreateCallFragment : Fragment(R.layout.fragment_create_call) {
     }
 
 
-    fun getDataOfDoc(){
+    private fun getDataOfDoc(){
         setFragmentResultListener("employeeName") { _, bundle ->
             val result = bundle.getString("dataName")
            binding.txtSelectDoc.text = result

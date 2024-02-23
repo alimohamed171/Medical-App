@@ -8,10 +8,12 @@ import com.example.medicalapp.repository.Repository
 import com.example.medicalapp.util.Resource
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class ProfileViewModel:ViewModel() {
+class ProfileViewModel @Inject constructor(
+    val repository:Repository
+):ViewModel() {
 
-    private val repository = Repository()
     private val _mutableLiveData = MutableLiveData<Resource<UserData>>()
     val mutableLiveData get() = _mutableLiveData
 

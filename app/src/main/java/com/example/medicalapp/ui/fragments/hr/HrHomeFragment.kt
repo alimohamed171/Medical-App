@@ -8,7 +8,9 @@ import androidx.navigation.fragment.findNavController
 import com.example.medicalapp.R
 import com.example.medicalapp.databinding.FragmentHrHomeBinding
 import com.example.medicalapp.util.SharedPrefs
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HrHomeFragment : Fragment(R.layout.fragment_hr_home) {
 
 

@@ -10,15 +10,16 @@ import com.example.medicalapp.util.Resource
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.launch
 import java.lang.Exception
+import javax.inject.Inject
 
-class HrViewModel:ViewModel() {
+class HrViewModel @Inject constructor(
+    val repository:Repository
+):ViewModel() {
 
     private val _mutableUsersLiveData = MutableLiveData<Resource<List<UsersData>?>>()
     private val _mutableRegisterLiveData = MutableLiveData<Resource<UserData>>()
     val mutableRegisterLiveData get() = _mutableRegisterLiveData
     val mutableUsersLiveData get() = _mutableUsersLiveData
-    private val repository = Repository()
-
 
     fun getUsers(type:String){
         viewModelScope.launch (IO){

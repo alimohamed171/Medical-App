@@ -6,13 +6,18 @@ import androidx.lifecycle.viewModelScope
 import com.example.medicalapp.data.UserData
 import com.example.medicalapp.repository.Repository
 import com.example.medicalapp.util.Resource
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class LoginViewModel:ViewModel() {
+@HiltViewModel
+class LoginViewModel @Inject constructor(
+    val repository:Repository
+):ViewModel() {
     private val _mutableLiveData = MutableLiveData<Resource<UserData>>()
     val mutableLiveData get() = _mutableLiveData
-    val repository = Repository()
+   // val repository = Repository()
 
     fun login(email : String , password : String , deviceToken : String  ){
         viewModelScope.launch (IO){

@@ -21,8 +21,9 @@ import com.example.medicalapp.util.REQUIRED
 import com.example.medicalapp.util.Resource
 import com.example.medicalapp.util.SharedPrefs
 import com.example.medicalapp.util.showToast
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-
+@AndroidEntryPoint
 class LoginFragment : Fragment(R.layout.fragment_login) {
 
 
