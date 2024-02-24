@@ -6,12 +6,13 @@ import androidx.lifecycle.viewModelScope
 import com.example.medicalapp.data.ModelResponseCreation
 import com.example.medicalapp.repository.Repository
 import com.example.medicalapp.util.Resource
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-
+@HiltViewModel
 class SpecialistViewModel @Inject constructor(
-    val repository:Repository
+    private val repository:Repository
 ):ViewModel() {
 
     private val _mutableCreateCallLiveData = MutableLiveData<Resource<String>>()

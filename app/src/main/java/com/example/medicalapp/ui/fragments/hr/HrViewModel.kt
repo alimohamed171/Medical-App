@@ -7,13 +7,14 @@ import com.example.medicalapp.data.UserData
 import com.example.medicalapp.data.UsersData
 import com.example.medicalapp.repository.Repository
 import com.example.medicalapp.util.Resource
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.launch
 import java.lang.Exception
 import javax.inject.Inject
-
+@HiltViewModel
 class HrViewModel @Inject constructor(
-    val repository:Repository
+    private val repository:Repository
 ):ViewModel() {
 
     private val _mutableUsersLiveData = MutableLiveData<Resource<List<UsersData>?>>()

@@ -21,13 +21,13 @@ import com.google.android.material.datepicker.MaterialDatePicker
 import dagger.hilt.android.AndroidEntryPoint
 import java.text.SimpleDateFormat
 import java.util.Calendar
+import java.util.Date
 import java.util.Locale
 
 @AndroidEntryPoint
 class NewUserFragment : Fragment(R.layout.fragment_new_user) {
 
 
-    private val calendar = Calendar.getInstance()
     var _binding : FragmentNewUserBinding? = null
     val binding get() = _binding!!
     var date : String? = null
@@ -71,38 +71,21 @@ private fun observe() {
     }
 }
 
-    private fun showDatePicker() {
-       // val ddd = MaterialDatePicker
-        val datePickerDialog = DatePickerDialog(
-            requireContext(),
-            //    android.R.style.Theme_DeviceDefault_Dialog_Alert ,
-            //  android.R.style.Theme_Material_Light_Dialog_Alert,
-            //   AlertDialog.THEME_HOLO_LIGHT
-            { _, year, monthOfYear, dayOfMonth ->
-                // Update calendar with selected date
-                calendar.set(Calendar.YEAR, year)
-                calendar.set(Calendar.MONTH, monthOfYear)
-                calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth)
-                // Update TextView with selected date
-                updateTextView()
-            },
-            calendar.get(Calendar.YEAR), // Initial year
-            calendar.get(Calendar.MONTH), // Initial month
-            calendar.get(Calendar.DAY_OF_MONTH) // Initial day
-        )
-        datePickerDialog.show()
-    }
-    private fun updateTextView() {
-       // val dateFormat = android.text.format.DateFormat.getDateFormat(requireContext())
-        val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
-        date =  dateFormat.format(calendar.time)
-        Log.e("TAGGGG", "updateTextView:  $date" )
-        binding.txtBirthday.text = date
-    }
 
+
+    private fun showDatePicker() {
+        val ddd = MaterialDatePicker.Builder.datePicker()
+            .setSelection(MaterialDatePicker.thisMonthInUtcMilliseconds())
+            .build()
+        ddd.show(parentFragmentManager,"Material")
+        ddd.addOnPositiveButtonClickListener {
+            val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+            binding.txtBirthday.text = dateFormat.format(Date(it).time)
+        }
+
+    }
 
     private fun validation (){
-
         binding.apply {
             val  fName = edtFName.text.toString()
             val  lName = edtLName.text.toString()
@@ -111,16 +94,13 @@ private fun observe() {
             val  address = edtAddress.text.toString()
             val  phone = editPhone.text.toString()
             val  gender = spinnerGender.selectedItem.toString()
-            val type = spinnerSpecialist.selectedItem.toString()
+            val  type = spinnerSpecialist.selectedItem.toString()
             val  status = spinnerStatus.selectedItem.toString()
-
             if (fName ==""){
                 edtFName.error = getString(R.string.required)
-
             }else if (lName == ""){
                 edtLName.error = getString(R.string.required)
             }else if (spinnerGender.selectedItemPosition == 0){
-
                 showToast(getString(R.string.please_select_gender))
             }else if (spinnerSpecialist.selectedItemPosition == 0){
                 showToast(getString(R.string.specialist_hint))
@@ -144,15 +124,8 @@ private fun observe() {
                     email,password,fName,lName,gender
                     ,type, date!!,status,address,phone,type)
             }
-
-
-
         }
     }
-
-
-
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
