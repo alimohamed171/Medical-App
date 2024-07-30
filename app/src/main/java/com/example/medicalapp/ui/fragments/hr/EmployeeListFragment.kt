@@ -66,9 +66,7 @@ class EmployeeListFragment : Fragment(R.layout.fragment_employee_list) {
             showToast("${it.id} + ${it.first_name}")
             findNavController().navigate(EmployeeListFragmentDirections.actionEmployeeListFragmentToProfileFragment(it.id))
         }
-
         rv.adapter = employeeListAdapter
-
     }
 
     private fun setupCategoryAdapter() {
@@ -78,7 +76,6 @@ class EmployeeListFragment : Fragment(R.layout.fragment_employee_list) {
         categoryAdapter.list = dataList
         categoryRecyclerView.adapter = categoryAdapter
     }
-
 
     private fun navigation() {
         binding.btnNewEmployee.setOnClickListener {
