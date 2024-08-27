@@ -32,6 +32,7 @@ object RetrofitInstance {
                     response.code//status code
                     return response
                 }
+                // test
             }).build()
         Retrofit.Builder()
             .baseUrl(BASE_URL)
